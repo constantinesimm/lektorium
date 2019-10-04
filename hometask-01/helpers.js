@@ -1,7 +1,8 @@
 //export helpers
 module.exports = {
     generateRandomIntArray,
-    validateArray
+    validateArray,
+    validateArrayValue
 };
 
 //generate random values for source array
@@ -10,6 +11,7 @@ function generateRandomIntArray(firstValue, lastValue, arrayLength) {
     let minValue = Math.min(firstValue, lastValue), //get min value from arguments
         maxValue = Math.max(firstValue, lastValue); //get max value from arguments
 
+    //generate random values for array
     while (resultArray.length < arrayLength) {
         resultArray.push(Math.floor(Math.random() * (maxValue - minValue) + minValue))
     }
@@ -17,7 +19,7 @@ function generateRandomIntArray(firstValue, lastValue, arrayLength) {
     return resultArray;
 };
 
-//check if arguments is array
+//validate array by instance and length
 function validateArray(sourceArray) {
     let instanceOfArray = sourceArray instanceof Array, //check data instance of Array
         arrayLength = sourceArray.length;               //check data array not empty
@@ -29,3 +31,8 @@ function validateArray(sourceArray) {
 
     return sourceArray;
 };
+
+//validate array values
+function validateArrayValue(value) {
+    return isNaN(Number(value)) ? value = 0 : value; //check value not isNaN or set this value = 0
+}
