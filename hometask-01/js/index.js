@@ -11,64 +11,35 @@
     [1,NaN,3,5,-3]
  */
 
-const checkArgument = {
-    _isArray(array) {
-        if (!(array instanceof Array)) {
-            throw new TypeError(`Argument is not Array`);
-        }
-        if (!array.length) {
-            throw new Error(`Array is empty`);
-        }
-
-        return array;
-    },
-    _isNaN(index, value) {
-        if (isNaN(value)) {
-            throw new TypeError(`Array value at index ${index} isNaN – ${value}`);
-        }
-
-        return Number(value)
+function findMinMaxValue(mode, array) {
+    let target = array[0];
+    if (!array.length || !(array instanceof Array)) {
+        throw new Error('Check your data')
     }
-};
-
-function findArrayMinValue(array) {
-    array = checkArgument._isArray(array);  //throw error if argument not array
-    let target = array[0],                  //set min value
-        currentIterateValue;                //current iterate value
-
     for (let index = 0; index < array.length; index++) {
-        currentIterateValue = checkArgument._isNaN(index, array[index]);    //throw error if value isNaN
-        if (currentIterateValue < target) {
-            target = currentIterateValue;
+        if (isNaN(array[index])) {
+            continue;
+        }
+        if (mode === 'max') {
+            array[index] > target ? target = array[index] : target
+        } else {
+            array[index] < target ? target = array[index] : target
         }
     }
 
     return target;
-};
-
-function findArrayMaxValue(array) {
-    array = checkArgument._isArray(array);  //throw error if argument not array
-    let target = array[0],                  //set max value
-        currentIterateValue;                //current iterate value
-
-    for (let index = 0; index < array.length; index++) {
-        currentIterateValue = checkArgument._isNaN(index, array[index]);    //throw error if value isNaN
-        if (currentIterateValue > target) {
-            target = currentIterateValue;
-        }
-    }
-
-    return target;
-};
+}
 
 function summaryArrayValues(array) {
-    array = checkArgument._isArray(array);      //throw error if argument not array
-    let summary = null,                         //set default summary
-        currentIterateValue;                    //current iterate value
-
+    let summary = null;
+    if (!array.length || !(array instanceof Array)) {
+        throw new Error('Check your data')
+    }
     for (let index = 0; index < array.length; index++) {
-        currentIterateValue = checkArgument._isNaN(index, array[index]);    //throw error if value isNaN
-        summary += currentIterateValue;
+        if (isNaN(array[index])) {
+            continue;
+        }
+        summary += array[index]
     }
 
     return summary;
