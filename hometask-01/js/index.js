@@ -35,11 +35,11 @@ function findMinMaxValue(mode, array) {
 };
 
 function summaryValues(array) {
-    let summary = null;
     //first of all throw error
     if (!array.length || !(array instanceof Array)) {
         throw new Error('Check your DATA: array can not be empty')
     }
+    let summary = null;
     for (let index = 0; index < array.length; index++) {
         //skip current iterate if NaN
         if (isNaN(array[index])) {
