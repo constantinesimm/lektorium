@@ -12,33 +12,40 @@
  */
 
 function findMinMaxValue(mode, array) {
-    let target = array[0];
-    if (!array.length || !(array instanceof Array)) {
-        throw new Error('Check your data')
+    //first of all throw error
+    if (!(mode === 'min' || mode === 'max' ) || !array.length || !(array instanceof Array)) {
+        throw new Error('Check your DATA: mode – \'min\' or \'max\'. array can not be empty');
     }
+
+    let target = array[0];
     for (let index = 0; index < array.length; index++) {
+        //skip current iterate if NaN
         if (isNaN(array[index])) {
             continue;
         }
-        if (mode === 'max') {
-            array[index] > target ? target = array[index] : target
+        //check mode and do action
+        if (mode === 'min') {
+            array[index] < target ? target = array[index] : false;
         } else {
-            array[index] < target ? target = array[index] : target
+            array[index] > target ? target = array[index] : false;
         }
     }
 
     return target;
-}
+};
 
-function summaryArrayValues(array) {
-    let summary = null;
+function summaryValues(array) {
+    //first of all throw error
     if (!array.length || !(array instanceof Array)) {
-        throw new Error('Check your data')
+        throw new Error('Check your DATA: array can not be empty')
     }
+    let summary = null;
     for (let index = 0; index < array.length; index++) {
+        //skip current iterate if NaN
         if (isNaN(array[index])) {
             continue;
         }
+        //do action
         summary += array[index]
     }
 
