@@ -28,7 +28,7 @@ function calculateWaterReserve(array){
         groundSum += current; //get ground sum
     });
 
-    //reserved space that would be filled with water (full - air - ground)
+    //reserved space that would be filled with water (full sum - air sum - ground sum)
     return leftMax * array.length - airSum - groundSum;
 };
 
