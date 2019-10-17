@@ -125,7 +125,7 @@ button.nav-toggler.active {
     color: #fff;
     z-index: 200;
 }
-.active a.nav-link{
+.top-nav > .hidden-nav.active a.nav-link{
     margin: auto 0;
     color: #ffffff;
     font-family: Roboto;
@@ -205,7 +205,7 @@ button.nav-toggler.active {
     right: 0;
     background-image: url(../img/line.png);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     height: inherit;
 }
 .info-address {
@@ -224,3 +224,36 @@ button.nav-toggler.active {
     position: relative;
     top: 60%;
 }
+
+/* PROJECTS SECTION */
+.projects-section {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 85vw;
+    width: 100%;
+    
+}
+
+.start {
+    position: absolute;
+    left: 0;
+    width: 32%;
+    height: 40%;
+    background-color: #ebb240;
+}
+.projects {
+    height: 100%;
+    width: 100vw;
+    position: inherit;
+}
+
+.projects .fondue {}
+.projects .potter {}
+.projects .louis {}
+.projects .p22 {}
+.projects .tabano {}
+.projects .fiji {}
+.projects .sesann {}
+.projects .alessi {}
+.projects .timeline {}
