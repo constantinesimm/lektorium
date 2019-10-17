@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hometask 02 part 4</title>
+    <style>
+        body{
+            width: 90vw;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        canvas {
+            display: block;
+            width: 550px;
+            height: 550px;
+            border: 1px solid black;
+        }
+        #ball {
+            position: absolute;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body onLoad="init();">
+    <canvas id="canvas" width="300" height="300"></canvas>
+    <script>
+        let context;
+        let x=150;
+        let y=200;
+        let dx=5;
+        let dy=5;
+
+        function init(){
+            context = canvas.getContext('2d');
+            setInterval(draw, 50);
+        }
+
+        function draw (){
+            let imgTag = new Image();
+            imgTag.src = './ball.png'
+            context.clearRect(0,0, 300,300);
+            context.beginPath();
+            context.drawImage(imgTag, x, y);
+            context.closePath();
+            
+            if( x < 0 || x > 250) {
+                dx =- dx
+            }; 
+            if( y < 0 || y > 250) {
+                dy =- dy
+            }; 
+            x += dx; 
+            y += dy;
+        }
+    </script>
+</body>
+</html>
