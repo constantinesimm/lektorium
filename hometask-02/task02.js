@@ -42,9 +42,9 @@ function calculateWaterReserve(array){
     [[2, 2, 2, 2, 2], 0]
 ].forEach(testCase => {
     if (calculateWaterReserve(testCase[0]) !== testCase[1]) {
-        console.log(calculateWaterReserve(testCase))
+        console.log(`[${testCase}] is failed with result ${calculateWaterReserve(testCase[0])}`)
     } else {
-        console.log(calculateWaterReserve(testCase[0]))
+        console.log(`[${testCase}] is succeed with result ${calculateWaterReserve(testCase[0])}`)
     }
 });
 
