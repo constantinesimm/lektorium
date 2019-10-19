@@ -10,7 +10,7 @@ const bills = [1, 2, 5, 10, 20, 50, 100];
 function giveChange(price, amount) {
     const calcChange = amount - price;
     const cache = [];
-    const availableBills = bills.reduceRight((acc, next) => (acc.push(next), acc), []);
+    const availableBills = bills.slice().reverse();
 
     function makeChange(value) {
         if (!value) {

@@ -1,5 +1,10 @@
 //header nav menu toggler button
-document.querySelector('.nav-toggler').addEventListener('click', function(e) {
-    e.target.classList.toggle('active');
-    document.querySelector(e.target.dataset.target).classList.toggle('active')
-})
+const navToggler = document.querySelector('.nav-toggler');
+navToggler.onclick = function() {
+    this.classList.toggle('active');
+    document.querySelector(this.dataset.target).classList.toggle('active');
+};
+
+//remove after
+const percentFrom = (part, full) => ((part / full) * 100).toFixed(2);
+

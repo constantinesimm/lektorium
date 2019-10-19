@@ -125,7 +125,7 @@ button.nav-toggler.active {
     color: #fff;
     z-index: 200;
 }
-.active a.nav-link{
+.top-nav > .hidden-nav.active a.nav-link{
     margin: auto 0;
     color: #ffffff;
     font-family: Roboto;
@@ -187,9 +187,8 @@ button.nav-toggler.active {
     z-index: 200;
 }
 
-
 .info-contacts{
-    position: absolute;
+    position: inherit;
     top: 0;
     right: 0;
     width: 100%;
@@ -200,12 +199,61 @@ button.nav-toggler.active {
     text-transform: uppercase;
     z-index: 1;
 }
-.header-menu .line{
-    position: absolute;
+.line{
+    position: inherit;
     top: 0;
     right: 0;
     background-image: url(../img/line.png);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     height: inherit;
 }
+.info-address {
+    width: 19%;
+    height: 13%;
+    font-size: 14px;
+    line-height: unset;
+    position: relative;
+    left: 13%;
+    top: 52.5%;
+}
+.info-contact {
+    width: 19%;
+    height: 6%;
+    left: 27%;
+    position: relative;
+    top: 60%;
+}
+
+/* PROJECTS SECTION */
+.projects-section {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 85vw;
+    width: 100%;
+    
+}
+
+.start {
+    position: absolute;
+    left: 0;
+    width: 32%;
+    height: 40%;
+    background-color: #ebb240;
+}
+.projects {
+    height: 100%;
+    width: 100vw;
+    position: inherit;
+}
+
+.projects .fondue {}
+.projects .potter {}
+.projects .louis {}
+.projects .p22 {}
+.projects .tabano {}
+.projects .fiji {}
+.projects .sesann {}
+.projects .alessi {}
+.projects .timeline {}
