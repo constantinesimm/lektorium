@@ -10,9 +10,8 @@ function calculateWaterReserve(array){
     let airSum = 0;
     let groundSum = 0;
 
-    let last = array.length - 1;
     let leftMax = array[0];
-    let rightMax = array[last];
+    let rightMax = array[array.length - 1];
 
     array.map((value, index, arr) => {
         let current = arr[index]; //left side
@@ -20,7 +19,7 @@ function calculateWaterReserve(array){
             airSum += (current - leftMax) * index;
             leftMax = current;
         }
-        current = arr[last - index]; //right side
+        current = arr[(array.length - 1) - index]; //right side
         if (rightMax < current) {    //if we gonna down
             airSum += (current - rightMax) * index;
             rightMax = current;
@@ -43,9 +42,9 @@ function calculateWaterReserve(array){
     [[2, 2, 2, 2, 2], 0]
 ].forEach(testCase => {
     if (calculateWaterReserve(testCase[0]) !== testCase[1]) {
-        throw(testCase)
+        console.log(`[${testCase}] is failed with result ${calculateWaterReserve(testCase[0])}`)
     } else {
-        console.log(calculateWaterReserve(testCase[0]))
+        console.log(`[${testCase}] is succeed with result ${calculateWaterReserve(testCase[0])}`)
     }
 });
 

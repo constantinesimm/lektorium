@@ -3,9 +3,8 @@ const navToggler = document.querySelector('.nav-toggler');
 navToggler.onclick = function() {
     this.classList.toggle('active');
     document.querySelector(this.dataset.target).classList.toggle('active');
-}
+};
 
-
-// remove after
+//remove after
 const percentFrom = (part, full) => ((part / full) * 100).toFixed(2);
 
