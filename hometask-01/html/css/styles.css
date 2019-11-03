@@ -1,0 +1,259 @@
+/*
+    // Extra small devices (portrait phones)
+        @media only screen and (max-width : 543px) {}
+    // Small devices (landscape phones)
+        @media only screen and (min-width : 544px) and (max-width : 767px) {}
+    // Medium devices (Tablets)
+        @media only screen and (min-width : 768px) and (max-width : 991px) {}
+    // Large devices (Desktops)
+        @media only screen and (min-width : 992px) and (max-width : 1199px) {}
+    // Extra large devices (Desktops)
+        @media only screen and (min-width : 1200px) {}
+*/
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Condensed';
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #e9eae2;
+}
+h1 {
+    font-size: 1.5em;
+}
+/*   Header Section   */
+header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: calc(100vw / 3);
+}
+
+/* brand block */
+.header-brand {
+    display: flex;
+    flex-direction: column;
+    width: 69%;
+    height: inherit;
+    background-image: url(../img/header-background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.brand-logo{
+    width: 16%;
+    margin-top: 5%;
+    margin-left: 14%;
+}
+
+.brand-title{
+    margin: 0 0 0 14%;
+    width: 7.5%;
+    font-weight: 400;
+    color: #393d3c;
+    text-transform: uppercase;
+    line-height: 1;
+}
+.brand-social{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 16%;
+    height: 6%;
+    margin: 6% 0 0 13%;
+    padding: 0 1%;
+}
+.social-link{
+    height: 100%;
+}
+a.social-link img {
+    height: 95%;
+}
+/*  menu block */
+.header-menu{
+    display: flex;
+    width: 31%;
+    height: inherit;
+    background-color: #7acec3;
+}
+
+.top-nav {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width: inherit;
+    height: inherit;
+    background-color: transparent;
+}
+button.nav-toggler:not(.active) {
+    position: absolute;
+    width: 26.88%;
+    height: 24.5%;
+    top: 10%;
+    background-image: url(../img/icons/hamburger_icon.png);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border: 2px solid #fff;
+    left: 35%;
+    cursor: pointer;
+    color: #fff;
+    background-color: transparent;
+    z-index: 200;
+}
+button.nav-toggler.active {
+    position: absolute;
+    width: 26.88%;
+    height: 24.5%;
+    top: 10%;
+    background-image: url(../img/icons/cross_icon.png);
+    background-color: #f8c255;
+    border: 2px solid #f8c255;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    left: 35%;
+    cursor: pointer;
+    color: #fff;
+    z-index: 200;
+}
+.top-nav > .hidden-nav.active a.nav-link{
+    margin: auto 0;
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 50px;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: 78px;
+}
+.hidden-nav.active{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    margin: auto;
+    height: calc(24% + 3px);
+    width: 129%;
+    left: -94%;
+    top: 10%;
+    z-index: 201;
+    background-color: #f8c255;
+}
+
+.hidden-nav:not(.active){
+    display: none;
+};
+
+button.nav-toggler:not(.active) {
+    position: absolute;
+    width: 26.88%;
+    height: 24.5%;
+    top: 10%;
+    background-image: url(../img/icons/hamburger_icon.png);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border: 2px solid #fff;
+    left: 35%;
+    cursor: pointer;
+    color: #fff;
+    background-color: transparent;
+    z-index: 200;
+}
+button.nav-toggler.active {
+    position: absolute;
+    width: 26.88%;
+    height: 24.5%;
+    top: 10%;
+    background-image: url(../img/icons/cross_icon.png);
+    background-color: #f8c255;
+    border: 2px solid #f8c255;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    left: 35%;
+    cursor: pointer;
+    color: #fff;
+    z-index: 200;
+}
+
+.info-contacts{
+    position: inherit;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: calc(100vw / 3);
+    font-size: 13px;
+    color: #ffffff;
+    line-height: 1.077;
+    text-transform: uppercase;
+    z-index: 1;
+}
+.line{
+    position: inherit;
+    top: 0;
+    right: 0;
+    background-image: url(../img/line.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: inherit;
+}
+.info-address {
+    width: 19%;
+    height: 13%;
+    font-size: 14px;
+    line-height: unset;
+    position: relative;
+    left: 13%;
+    top: 52.5%;
+}
+.info-contact {
+    width: 19%;
+    height: 6%;
+    left: 27%;
+    position: relative;
+    top: 60%;
+}
+
+/* PROJECTS SECTION */
+.projects-section {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 85vw;
+    width: 100%;
+    
+}
+
+.start {
+    position: absolute;
+    left: 0;
+    width: 32%;
+    height: 40%;
+    background-color: #ebb240;
+}
+.projects {
+    height: 100%;
+    width: 100vw;
+    position: inherit;
+}
+
+.projects .fondue {}
+.projects .potter {}
+.projects .louis {}
+.projects .p22 {}
+.projects .tabano {}
+.projects .fiji {}
+.projects .sesann {}
+.projects .alessi {}
+.projects .timeline {}
