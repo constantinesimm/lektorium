@@ -79,7 +79,7 @@ class Tamagochi {
             }
         }, 2 * 60 * 1000);
     };
-    Statistics() { // character statistics method
+    statistics() { // character statistics method
         console.log(
             `***\t\t\t${this.character.name} Statistics\t\t\t***\n` +
             `*\t${this.character.name} is ${this.character.age} years old\n`+
@@ -98,7 +98,7 @@ class Tamagochi {
         clearInterval(this.sleepTimer);
         clearInterval(this.playTimer);
         this.endDate = Date.now();
-        this.Statistics();
+        this.statistics();
     };
 
     //character control methods
@@ -137,5 +137,5 @@ Zippy.startGame();
 Zippy.feedMe();
 Zippy.takeSleep();
 Zippy.playMe();
-Zippy.Statistics();
+Zippy.statistics();
 Zippy.gameOver();
