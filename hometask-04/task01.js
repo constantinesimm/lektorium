@@ -13,7 +13,6 @@ const Employee = (function () {
         };
     };
     //private props
-    const [ juniorRate, middleRate, seniorRate ] = [ 0.25, 0.5, 0.75 ]; //position coefficient & hour rate ( item * 10 )
     let _fullname;
     let _positionCoefficient;
     let _hourRate;
@@ -33,18 +32,10 @@ const Employee = (function () {
             return hours * _hourRate + (hours * _hourRate * _positionCoefficient);  //salary + position loyalty bonus :D
         },
         _setSalaryCoefficients({position, experience}) {
-            if (position === 'Junior') {
-                _positionCoefficient = juniorRate * experience;
-                _hourRate = juniorRate * 10;
-            }
-            if (position === 'Middle') {
-                _positionCoefficient = middleRate * experience;
-                _hourRate = middleRate * 10;
-            }
-            if (position === 'Senior') {
-                _positionCoefficient = seniorRate * experience;
-                _hourRate = seniorRate * 10;
-            }
+            const rates = { 'Junior': 0.25, 'Middle': 0.5, 'Senior': 0.75 };
+
+            _positionCoefficient = rates[position] * experience;
+            _hourRate = rates[position] * 10;
         }
     };
 
