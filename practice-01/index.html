@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Practice-01</title>
+    <link rel="stylesheet" href="css/styles.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,400i,500,500i,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+</head>
+<body>
+<div class="wrapper">
+    <div class="logo">
+        <div class="logotype"></div>
+    </div>
+    <div class="menu">
+        <ul class="nav">
+            <li>
+                <a class="menu-link" data-tab-name="generate_dates" data-tooltip="Generate random dates">Generate dates</a>
+            </li>
+            <li>
+                <a class="menu-link" data-tab-name="actions_with_dates" data-tooltip="Actions with generated dates">Action with dates</a>
+            </li>
+            <li>
+            <span class="sub-nav_title" data-tooltip="Show contacts block">Contact us</span>
+                <ul class="sub-nav">
+                    <li>
+                        <a class="menu-link" data-tab-name="contacts" data-parent="sub">Contacts</a>
+                    </li>
+                    <li>
+                        <a class="menu-link" data-tab-name="callback" data-parent="sub">Request a call</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="empty-section visible">Please, select tab from menu</div>
+        <div class="content-section" data-tab="generate_dates">
+            <div class="section-header info">Create random dates and set in LocalStorage</div>
+            <div class="section-body">
+                <button class="create-dates">
+                    <i class="fas fa-plus"></i>
+                    Create random dates
+                </button>
+            </div>
+        </div>
+        <div class="content-section" data-tab="actions_with_dates">
+            <div class="section-header success">Get, sort and set in LocalStorage</div>
+            <div class="section-body">
+                <button class="actions-with-dates">
+                    <i class="fas fa-file-download"></i>
+                    Actions with data
+                </button>
+            </div>
+        </div>
+        <div class="content-section" data-tab="contacts">
+            <div class="section">
+                <div class="section-header warning">
+                    <i class="fas fa-map-marked"></i> Address
+                </div>
+                <div class="section-body">
+                    <span class="country"></span> Ukraine, Cherkasy, Smilianska str.2, office 23
+                </div>
+            </div>
+            <div class="section row">
+                <div class="column">
+                    <div class="section-header warning">
+                        <i class="far fa-envelope"></i> Email
+                    </div>
+                    <div class="section-body">
+                        <p class="body-row">
+                            <span class="title">Sales:</span>
+                            <a href="mailto:sales@company.com">sales@company.com</a>
+                        </p>
+                        <p class="body-row">
+                            <span class="title">Support:</span>
+                            <a href="mailto:support@company.com">support@company.com</a>
+                        </p>
+                        <p class="body-row">
+                            <span class="title">Marketing.:</span>
+                            <a href="mailto:marketing@company.com">marketing@company.com</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="section-header warning">
+                        <i class="fas fa-mobile-alt"></i> Phone
+                    </div>
+                    <div class="section-body">
+                        <p class="body-row">
+                            <span class="title">Sales:</span>
+                            <a href="tel:0442992099">(044) 299 2099</a>
+                        </p>
+                        <p class="body-row">
+                            <span class="title">Support:</span>
+                            <a href="tel:0442992000">(044) 299 2000</a>
+                        </p>
+                        <p class="body-row">
+                            <span class="title">Marketing:</span>
+                            <a href="tel:0931706655">(093) 170 6655</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="section social">
+                <div class="section-header info">
+                    <i class="fas fa-users"></i> Social networks
+                </div>
+                <div class="section-body social-links">
+                    <a href="https://www.facebook.com/mister.simm" class="social-link" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/konstantin-peschanov-273812100/" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/constantinesimm" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://t.me/ConstantineSimm" class="social-link" target="_blank">
+                        <i class="fab fa-telegram-plane"></i>
+                    </a>
+                    <a href="viber://chat?number=+380672230967" class="social-link">
+                        <i class="fab fa-viber"></i>
+                    </a>
+                    <a href="skype:constantine.peschanov?call" class="social-link">
+                        <i class="fab fa-skype"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="content-section" data-tab="callback">
+            <div class="section callback">
+                <div class="section-header dark">
+                    <i class="fas fa-phone-volume"></i> Request Callback
+                </div>
+                <div class="section-body">
+                    <div><input class="callback phone-field" pattern="[0-9]{10}" type="tel" placeholder="Phone number" data-tooltip="Enter phone number in format – 0441112233"></div>
+                    <div>
+                        <button class="callback" disabled><i class="fas fa-phone-volume"></i> Request Call</button>
+                    </div>
+                    <div class="alert">
+                        <i></i><span style="margin-left: 5px;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/functions.js"></script>
+</body>
+</html>
