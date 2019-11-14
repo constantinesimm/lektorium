@@ -13,7 +13,7 @@ router.post('/initiateCall', function (req, res) {
     const clientNumber = req.body.callee;
 
     //validate number
-    if (!clientNumber.match(/^(067|097|096|098|093|073|063|095|050)([0-9]{3})([0-9]{4})$/)) {
+    if (!clientNumber.match(/^(067|097|096|098|093|073|063|095|050)([0-9]{7})$/)) {
         return res.status(400).send('Phone format is incorrect. Please, enter valid number');
     }
 
