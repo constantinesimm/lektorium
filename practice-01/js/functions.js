@@ -22,10 +22,10 @@ function randomData(length = 10) {
         date = new Date(Math.floor(Math.random() * 3000), Math.floor(Math.random() * 11), Math.floor(Math.random() * 31) );
         randomDataArr.push(date);
     }
-    let strData = JSON.stringify(randomDataArr);
-    localStorage.setItem("random_date", strData);
+    
+    return localStorage.setItem("random_date", JSON.stringify(randomDataArr));
 }
-randomDataBtn.addEventListener("click", randomData);
+randomDataBtn.addEventListener("click", () => { return randomData() });
 
 const callbackBtn = document.querySelector("button.callback");
 const alertBlock = document.querySelector(".alert");
