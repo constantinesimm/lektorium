@@ -1,16 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Debounce search</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="css/styles.css"/>
 </head>
+
 <body>
+<div id="app">
     <div class="container">
-        <div class="source_data"></div>
-        <div class="input_container">
-            <input type="text"/>
+        <div class="result__group">
+            <h4>Search result:</h4>
+            <p class="search_result">Here will be displayed search data</p>
+        </div>
+        <div class="input__group">
+            <label for="search">Search phone number:</label>
+            <input id="search" type="text"/>
+        </div>
+        <div class="source_group">
+            <h4>Source data array:</h4>
         </div>
     </div>
-    <script src="js/debounce.js"></script>
+</div>
+
+<script src="js/debounce_search.js"></script>
 </body>
 </html>
