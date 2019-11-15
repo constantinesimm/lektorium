@@ -23,7 +23,7 @@ Array.prototype.myMap = function (callback, scope) {
 
     return array;
 };
-
+[5, '2', NaN, 15, 12, null]
 Array.prototype.mySort = function (compareFn) {
     for (let i = 0; i < this.length; i++) {
         let min = i;
@@ -45,3 +45,32 @@ Array.prototype.mySort = function (compareFn) {
     }
     return this;
 };
+
+Array.prototype.mySort = function(compareFn) {
+    if( this.length <= 1 ) {
+        return this;
+    }
+
+    compareFn = typeof compareFn === 'function' && compareFn ||
+        function(a, b){
+            return a+'' > b+'';
+        };
+
+    for( let i = 0; i < this.length; i++ ){
+        for( let j = 0; j < ( this.length - 1 ); j++ ){
+            let fnResponse = compareFn( this[ j ], this[ j + 1 ] ),
+                response = typeof fnResponse === 'boolean' && fnResponse || parseInt( compareFn( this[ j ], this[ j + 1 ] ) ),
+                arrEntry;
+
+            if( response && response > 0 ){
+                arrEntry = this[ j + 1 ];
+                this[ j + 1 ] = this[ j ];
+                this[ j ] = arrEntry;
+            }
+        }
+    }
+
+    return this;
+};
+console.log([5, '2', NaN, 15, 12, null].mySort(), 'mySort');
+console.log([5, '2', NaN, 15, 12, null].sort(), 'origin');
