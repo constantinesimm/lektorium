@@ -2,10 +2,11 @@ function chain(...args) {
     let fn = args.pop();                    //get last argument that is a func
     let fnResult = fn.apply(this, args);    //get last arg func result with current arguments
 
-    return { then: function(...args1) {     //return then method
+    return { then: function (...args1) {     //return then method
             let cb = args1.pop();           //get this step last argument that is func
             return chain.apply(this, [...args1, fnResult, cb])  //scope with current args, function result and new func
-        }}
+        }
+    }
 }
 
 
